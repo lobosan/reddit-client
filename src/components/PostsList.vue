@@ -3,18 +3,21 @@
     <li v-for="post in posts" :key="post.id">
       <v-card flat color="black">
         <v-row>
-          <v-col cols="1">
+          <v-col v-if="!post.visited" cols="1">
             <v-icon color="blue" size="13">mdi-circle</v-icon>
+          </v-col>
+          <v-col v-else cols="1">
+            <v-icon color="grey" size="13">mdi-circle</v-icon>
           </v-col>
           <v-col class="grey--text text--lighten-2 title">
             {{ post.author }}
-            <span class="body-2 ml-1">{{
-              moment(post.created * 1000).fromNow()
-            }}</span>
+            <span class="body-2 ml-1">
+              {{ moment(post.created * 1000).fromNow() }}
+            </span>
           </v-col>
         </v-row>
 
-        <v-card flat color="black" @click.prevent>
+        <v-card flat color="black" @click="visitPostById(post.id)">
           <v-row no-gutters>
             <v-col cols="4">
               <v-img :src="post.thumbnail" width="80" class="mt-1 ml-1"></v-img>
@@ -55,7 +58,7 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { mapState, mapMutations } from "vuex";
 import * as moment from "moment";
 
 export default {
@@ -64,6 +67,9 @@ export default {
   }),
   computed: {
     ...mapState(["posts"])
+  },
+  methods: {
+    ...mapMutations(["visitPostById"])
   }
 };
 </script>
