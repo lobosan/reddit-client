@@ -1,36 +1,31 @@
 <template>
   <v-app>
-    <v-app-bar app>
-      <v-toolbar-title class="headline text-uppercase">
-        <span>Vuetify</span>
-        <span class="font-weight-light">MATERIAL DESIGN</span>
-      </v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-btn
-        text
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-      >
-        <span class="mr-2">Latest Release</span>
-      </v-btn>
+    <v-navigation-drawer app clipped color="black" width="360" v-model="drawer">
+      <PostsList />
+    </v-navigation-drawer>
+
+    <v-app-bar app clipped-left dark color="grey darken-4">
+      <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
+      <v-toolbar-title>Reddit Posts</v-toolbar-title>
     </v-app-bar>
 
     <v-content>
-      <HelloWorld />
+      <PostContent />
     </v-content>
   </v-app>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld";
+import PostsList from "./components/PostsList";
+import PostContent from "./components/PostContent";
 
 export default {
-  name: "App",
   components: {
-    HelloWorld
+    PostsList,
+    PostContent
   },
   data: () => ({
-    //
+    drawer: null
   })
 };
 </script>
