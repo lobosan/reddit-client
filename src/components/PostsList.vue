@@ -3,11 +3,10 @@
     <li v-for="post in posts" :key="post.id">
       <v-card flat color="black">
         <v-row>
-          <v-col v-if="!post.visited" cols="1">
-            <v-icon color="blue" size="13">mdi-circle</v-icon>
-          </v-col>
-          <v-col v-else cols="1">
-            <v-icon color="grey" size="13">mdi-circle</v-icon>
+          <v-col cols="1">
+            <v-icon :color="post.visited ? 'grey' : 'blue'" size="13"
+              >mdi-circle</v-icon
+            >
           </v-col>
           <v-col class="grey--text text--lighten-2 title">
             {{ post.author }}
