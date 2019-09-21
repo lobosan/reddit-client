@@ -14,6 +14,10 @@ export default new Vuex.Store({
       state.postId = postId;
       const post = state.posts.find(post => post.id === state.postId);
       post.visited = true;
+    },
+    dismissPostById(state, postId) {
+      if (state.postId === postId) state.postId = null;
+      state.posts = state.posts.filter(post => post.id !== postId);
     }
   },
   actions: {},

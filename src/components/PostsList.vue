@@ -34,7 +34,13 @@
 
         <v-row>
           <v-col cols="6">
-            <v-btn text medium class="pa-0" color="white">
+            <v-btn
+              text
+              medium
+              class="pa-0"
+              color="white"
+              @click="dismissPostById(post.id)"
+            >
               <v-icon class="mx1" color="orange lighten-2" size="25"
                 >mdi-close-circle-outline</v-icon
               >
@@ -68,7 +74,7 @@ export default {
     ...mapState(["posts"])
   },
   methods: {
-    ...mapMutations(["visitPostById"])
+    ...mapMutations(["visitPostById", "dismissPostById"])
   }
 };
 </script>
