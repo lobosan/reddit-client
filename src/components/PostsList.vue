@@ -1,5 +1,5 @@
 <template>
-  <ul class="px-4 py-0">
+  <v-slide-x-transition group tag="ul" class="px-4 py-0">
     <li v-for="post in posts" :key="post.id">
       <v-card flat color="black">
         <v-row>
@@ -59,7 +59,7 @@
         <v-divider class="my-1" color="grey"></v-divider>
       </v-card>
     </li>
-  </ul>
+  </v-slide-x-transition>
 </template>
 
 <script>
