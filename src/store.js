@@ -18,6 +18,10 @@ export default new Vuex.Store({
     dismissPostById(state, postId) {
       if (state.postId === postId) state.postId = null;
       state.posts = state.posts.filter(post => post.id !== postId);
+    },
+    dismissAllPosts(state) {
+      if (state.postId !== null) state.postId = null;
+      state.posts = null;
     }
   },
   actions: {},

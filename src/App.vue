@@ -2,6 +2,7 @@
   <v-app>
     <v-navigation-drawer app clipped color="black" width="360" v-model="drawer">
       <PostsList />
+      <DismissAllPosts />
     </v-navigation-drawer>
 
     <v-app-bar app clipped-left dark color="grey darken-4">
@@ -18,11 +19,13 @@
 <script>
 import PostsList from "./components/PostsList";
 import PostContent from "./components/PostContent";
+import DismissAllPosts from "./components/DismissAllPosts";
 
 export default {
   components: {
     PostsList,
-    PostContent
+    PostContent,
+    DismissAllPosts
   },
   data: () => ({
     drawer: null
