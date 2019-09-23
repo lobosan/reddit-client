@@ -1,13 +1,13 @@
 # Reddit Client made with Vue.js and Vuetify
 
 ## Decisions taken
-* ### This project uses Vuetify for creating the layout, components and transitions with ease. For more details about how to use this tool, go to their website https://vuetifyjs.com
+* This project uses Vuetify for creating the layout, components and transitions with ease. For more details about how to use this tool, go to their website https://vuetifyjs.com
 
-* ### For state management, this project uses Vuex.
+* For state management, this project uses Vuex.
 
-* ### To transform the timestamp, the library moment has been used.
+* To transform the timestamp, the library moment has been used.
 
-* ### The website has been deployed to AWS S3, and it's available at http://reddit-client-vuejs.s3-website-us-east-1.amazonaws.com/
+* The website has been deployed to AWS S3, and it's available at http://reddit-client-vuejs.s3-website-us-east-1.amazonaws.com/
 
 ## Project setup
 ```
