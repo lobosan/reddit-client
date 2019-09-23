@@ -70,6 +70,9 @@ export default {
   data: () => ({
     moment
   }),
+  created() {
+    this.$store.dispatch("getPosts");
+  },
   computed: {
     ...mapState(["posts"])
   },
